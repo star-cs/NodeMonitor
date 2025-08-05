@@ -1,0 +1,29 @@
+syntax = "proto3";
+package monitor.proto;
+
+message CpuStat{
+    string cpu_name = 1;   
+    float cpu_percent = 2; 
+    float usr_percent = 3;  
+    float system_percent = 4; 
+    float nice_percent = 5; 
+    float idle_percent = 6; 
+    float io_wait_percent = 7;  
+    float irq_percent = 8;
+    float soft_irq_percent = 9;
+    float steal_percent = 10;
+    float guest_percent = 11;
+    float guest_nice_percent = 12;
+  }
+
+/**
+​cpu_name​：标识 CPU 核心的名称或编号。在多核系统中，通常显示为 "cpu0"、"cpu1" 等表示各个核心，而 "cpu" 则表示所有核心的汇总统计。
+​cpu_percent​：表示 CPU 的总使用率百分比，通常是通过计算非空闲时间的总和与总时间的比值得出的。
+​usr_percent​：用户空间程序占用的 CPU 时间百分比，表示 CPU 执行普通应用程序代码的时间。高值通常表示应用程序负载较重。
+​system_percent​：内核空间占用的 CPU 时间百分比，表示 CPU 执行系统调用和内核操作的时间。异常高的系统时间可能表明内核资源争用或频繁的系统调用。
+​nice_percent​：低优先级（nice 值调整过）的用户空间进程占用的 CPU 时间百分比。这些进程对系统资源的竞争性较低。
+​idle_percent​：CPU 处于空闲状态的时间百分比。较高的空闲百分比通常表示 CPU 资源充足，但持续过高可能表示资源未充分利用。
+​io_wait_percent​：CPU 等待 I/O 操作完成的时间百分比。高 iowait 值通常表明存储子系统可能是性能瓶颈。
+​irq_percent​：处理硬件中断占用的 CPU 时间百分比。异常高的值可能表明硬件设备存在问题或配置不当。
+​soft_irq_percent​：处理软件中断占用的 CPU 时间百分比。网络堆栈等内核子系统通常会生成软件中断。
+*/

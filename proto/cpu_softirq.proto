@@ -1,0 +1,17 @@
+syntax = "proto3";
+package monitor.proto;
+
+// Linux 内核软中断
+message SoftIrq {
+    string cpu = 1; // cpu核心
+    float hi = 2;   // 高优先级中断
+    float timer = 3;  // 定时中断
+    float net_tx = 4; // 网络发送中断
+    float net_rx = 5; // 网络接收中断
+    float block = 6;  // 块 I/O 设备中断
+    float irq_poll = 7;// 软中断轮询中断
+    float tasklet = 8;  // 基于软中断的任务延迟处理
+    float sched = 9;  // 调度软中断
+    float hrtimer = 10; // 高精度定时器软中断
+    float rcu = 11; // RCU 锁软中断
+  }
