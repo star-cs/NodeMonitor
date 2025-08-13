@@ -21,3 +21,5 @@ CMakeUserPresets.json
 build
 bin 
 lib
+docker
+# !docker/build

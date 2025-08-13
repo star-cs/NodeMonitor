@@ -7,7 +7,6 @@
 
 using grpc::ServerContext;
 using grpc::Status;
-using grpc::Server;
 
 using monitor::proto::MonitorInfo;
 using monitor::proto::GrpcManager;

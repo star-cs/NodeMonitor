@@ -7,4 +7,8 @@ message NetInfo {
     float rcv_rate = 3;
     float send_packets_rate = 4;
     float rcv_packets_rate = 5;
-  }
+    float err_in_rate = 6;
+    float err_out_rate = 7;
+    float drop_in_rate = 8;
+    float drop_out_rate = 9;
+}
